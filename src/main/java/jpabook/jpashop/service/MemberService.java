@@ -45,13 +45,13 @@ public class MemberService {
 
     /**
      * 회원 수정
-     * @param id
-     * @param name
      */
     @Transactional
     public void update(Long id, String name) {
-        Member member = memberRepository.findOne(id);
-        member.setName(name);
+        Member member = memberRepository.findOne(id); // 영속성 컨텍스트로 담아줌
+        member.setName(name); // 영속상태의 멤버 수정
+
+//        update 종료시 트랜잭션 종료되면서 flush + commit
     }
 
 }
