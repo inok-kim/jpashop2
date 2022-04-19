@@ -18,6 +18,7 @@ public class InitDb {
     @PostConstruct
     public void init() {
         initService.doInit1();
+        initService.doInit2();
     }
 
     @Component
