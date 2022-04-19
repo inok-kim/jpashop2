@@ -103,6 +103,7 @@ public class OrderRepository {
     }
 
     public List<Order> findAllWithItem() {
+        // distinct가 쿼리에도 붙어있으나 실제 sql에서는 order를 distinct해주진 않는다 row가 전부 동일해야 중복으로 처리해주기 때문에..
         return em.createQuery(
                 "select distinct o from Order o " +
                         " join fetch o.member m " +
